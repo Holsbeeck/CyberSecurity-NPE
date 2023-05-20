@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Voorbereidingen voor Roxy installatie
+cd /var/www
+mkdir haproxy-wi
 sudo apt install curl -y
-sudo mkdir /var/www/haproxy-wi
 curl -o v6.1.0.0.tar.gz -L https://github.com/hap-wi/roxy-wi/archive/refs/tags/v6.1.0.0.tar.gz
 sudo tar -xzf v6.1.0.0.tar.gz -C "/var/www/haproxy-wi" --strip-components=1
 rm v6.1.0.0.tar.gz

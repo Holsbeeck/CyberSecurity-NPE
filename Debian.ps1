@@ -14,14 +14,14 @@ $vdi2 = "C:\Users\Jelle\Desktop\kali.vdi"
 # VBoxManage internalcommands sethduuid "vdi2"
 
 # Gedeelte voor Debian(machine 1) 2 cores om kernel panic te vermijden met 2GB aan RAM. 
-vboxmanage createvm --name "$naam1" --ostype Debian_64 --register
-vboxmanage modifyvm "$naam1" --memory 2048 --cpus 2 --nic1 hostonly --hostonlyadapter1 "$adapt"
+vboxmanage createvm --name "$naam1" --ostype Debian_64 --register 
+vboxmanage modifyvm "$naam1" --memory 2048 --cpus 2 --nic1 hostonly --hostonlyadapter1 "$adapt" --vram 128
 vboxmanage storagectl "$naam1" --name "SATA Controller" --add sata
 vboxmanage storageattach "$naam1" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$vdi1"
 
 # Gedeelte voor Kali(machine 2) 4 cores 4GB aan RAM.
 vboxmanage createvm --name "$naam2" --ostype Debian_64 --register
-vboxmanage modifyvm "$naam2" --memory 4096 --cpus 4 --nic1 hostonly --hostonlyadapter1 "$adapt"
+vboxmanage modifyvm "$naam2" --memory 4096 --cpus 4 --nic1 hostonly --hostonlyadapter1 "$adapt" --vram 128 
 vboxmanage storagectl "$naam2" --name "SATA Controller" --add sata
 vboxmanage storageattach "$naam2" --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium "$vdi2"
 
