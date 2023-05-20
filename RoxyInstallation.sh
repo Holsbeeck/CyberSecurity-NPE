@@ -10,7 +10,7 @@ rm v6.1.0.0.tar.gz
 
 # Installatie van Roxy-WI
 
-sudo apt-get install apache2 python3 python3-pip python3-ldap rsync ansible python3-requests -y
+sudo apt-get install python3 python3-pip python3-ldap rsync ansible python3-requests -y
 sudo apt-get install python3-networkx python3-matplotlib python3-bottle python3-future python3-jinja2 python3-peewee python3-distro -y
 sudo apt-get install python3-pymysql python3-psutil python3-paramiko netcat-traditional nmap net-tools lshw dos2unix libapache2-mod-wsgi-py3 openssl sshpass -y
 
