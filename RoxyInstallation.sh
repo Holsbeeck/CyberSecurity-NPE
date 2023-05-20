@@ -25,10 +25,10 @@ sudo mkdir /var/log/roxy-wi/
 sudo mkdir /etc/roxy-wi/
 sudo mv haproxy-wi/roxy-wi.cfg /etc/roxy-wi
 sudo openssl req -newkey rsa:4096 -nodes -keyout /var/www/haproxy-wi/app/certs/haproxy-wi.key -x509 -days 10365 -out /var/www/haproxy-wi/app/certs/haproxy-wi.crt -subj "/C=US/ST=Almaty/L=Springfield/O=Roxy-WI/OU=IT/CN=*.roxy-wi.org/emailAddress=aidaho@roxy-wi.org"
-$ sudo chown -R www-data:www-data /var/www/haproxy-wi/
-$ sudo chown -R www-data:www-data /var/lib/roxy-wi/
-$ sudo chown -R www-data:www-data /var/log/roxy-wi/
-$ sudo chown -R www-data:www-data /etc/roxy-wi/
-$ sudo systemctl daemon-reload      
-$ sudo systemctl restart httpd
-$ sudo systemctl restart rsyslog
+sudo chown -R www-data:www-data /var/www/haproxy-wi/
+sudo chown -R www-data:www-data /var/lib/roxy-wi/
+sudo chown -R www-data:www-data /var/log/roxy-wi/
+sudo chown -R www-data:www-data /etc/roxy-wi/
+sudo systemctl daemon-reload      
+sudo systemctl restart apache2
+sudo systemctl restart rsyslog
