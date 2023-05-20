@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Voorbereidingen voor Roxy installatie
-sudo apt-get install curl 
+sudo apt install apache2 curl -y
 sudo mkdir /var/www/haproxy-wi
 
 # Download 
