@@ -1,17 +1,13 @@
 #!/bin/bash
 
-# Voorbereidingen voor Roxy installatie
-sudo apt install apache2 curl -y
+# Installatie van Roxy-WI
+sudo apt-get install apache 2python3 python3-pip python3-ldap rsync ansible python3-requests -y
+sudo apt-get install python3-networkx python3-matplotlib python3-bottle python3-future python3-jinja2 python3-peewee python3-distro -y
+sudo apt-get install python3-pymysql python3-psutil python3-paramiko netcat-traditional nmap net-tools lshw dos2unix libapache2-mod-wsgi-py3 openssl sshpass curl -y
 sudo mkdir /var/www/haproxy-wi
 curl -o v6.1.0.0.tar.gz -L https://github.com/hap-wi/roxy-wi/archive/refs/tags/v6.1.0.0.tar.gz
 sudo tar -xzf v6.1.0.0.tar.gz -C "/var/www/haproxy-wi" --strip-components=1
 rm v6.1.0.0.tar.gz
-
-# Installatie van Roxy-WI
-
-sudo apt-get install python3 python3-pip python3-ldap rsync ansible python3-requests -y
-sudo apt-get install python3-networkx python3-matplotlib python3-bottle python3-future python3-jinja2 python3-peewee python3-distro -y
-sudo apt-get install python3-pymysql python3-psutil python3-paramiko netcat-traditional nmap net-tools lshw dos2unix libapache2-mod-wsgi-py3 openssl sshpass -y
 
 sudo chown -R www-data:www-data /var/www/haproxy-wi/
 sudo cp /var/www/haproxy-wi/config_other/httpd/roxy-wi_deb.conf /etc/apache2/sites-available/roxy-wi.conf
